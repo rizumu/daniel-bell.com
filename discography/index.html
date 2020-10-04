@@ -1,0 +1,403 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script><script type="text/javascript">window.NREUM||(NREUM={});NREUM.info={"beacon":"bam.nr-data.net","queueTime":0,"licenseKey":"d9d8f77c0d","agent":"","transactionName":"YwFWNxNSWEVZUEcLWVpLchYPUEJfV10cBlxVClMMT0VfU09AHQVTWgFGCgIdVFdLVgk2U1kUWAIVVmBfXUQdBVNA","applicationID":"822056","errorBeacon":"bam.nr-data.net","applicationTime":19}</script><script type="text/javascript">var NREUMQ=NREUMQ||[];NREUMQ.push(["mark","firstbyte",new Date().getTime()])</script>
+    <link type="text/css" href="http://static.scenemachine.net/css/daniel_bell_com-ea7a9378fbda1a124b42.css" rel="stylesheet" />
+    <link rel="shortcut icon" href="http://static.scenemachine.net/daniel-bell.com/img/favicon.ico"/>
+    <title>daniel-bell.com
+    discography
+</title>
+
+</head>
+
+<body>
+    <div id="main">
+        <div id="content"><div id="contentBox">
+
+<div id="tabs">
+    <ul>
+         <li><a href="index.html#tabs-1">12&quot; Releases as DBX</a></li>
+         <li><a href="index.html#tabs-2">12&quot; Releases as Daniel Bell</a></li>
+         <li><a href="index.html#tabs-3">albums</a></li>
+         <li><a href="index.html#tabs-4">mix CD&#39;s</a></li>
+         <li><a href="index.html#tabs-5">compilation tracks</a></li>
+         <li><a href="index.html#tabs-6">co-productions</a></li>
+         <li><a href="index.html#tabs-7">recent remixes</a></li>
+    </ul>
+    <div id="tabs-1">
+        <div class="discog-images">
+            <span class="image1"><img src="http://content.scenemachine.net/img/discog/alien.gif" alt="album art 1"/></span>
+            <span class="image2"><img src="http://content.scenemachine.net/img/discog/losing-control.gif" alt="album art 2"/></span>
+        </div>
+        <table>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Neurotika</td>
+                <td class="discog-col3">Probe</td>
+                <td class="discog-col4">1992</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Alien</td>
+                <td class="discog-col3">Peacefrog</td>
+                <td class="discog-col4">1993</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Bleep</td>
+                <td class="discog-col3">Accelerate</td>
+                <td class="discog-col4">1993</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Ghetto Trax</td>
+                <td class="discog-col3">Accelerate</td>
+                <td class="discog-col4">1993</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Losing Control</td>
+                <td class="discog-col3">Accelerate</td>
+                <td class="discog-col4">1994</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Losing Control</td>
+                <td class="discog-col3">Peacefrog</td>
+                <td class="discog-col4">1994</td>
+            </tr>
+        </table>
+    </div>
+    <div id="tabs-2">
+        <div class="discog-images">
+            <span class="image1"><img src="http://content.scenemachine.net/img/discog/subterranean.gif" alt="album art 1"/></span>
+            <span class="image2"><img src="http://content.scenemachine.net/img/discog/squirrel.gif" alt="album art 2"/></span>
+        </div>
+        <table>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Lost Tracks </td>
+                <td class="discog-col3">Klang</td>
+                <td class="discog-col4">1995</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Warped</td>
+                <td class="discog-col3">Elevate Special Projects</td>
+                <td class="discog-col4">1997</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Subterranean</td>
+                <td class="discog-col3">Elevate Special Projects</td>
+                <td class="discog-col4">1998</td>
+            </tr>
+            <tr>
+                <td class="discog-col1"></td>
+                <td class="discog-col2">Squirrel Bait</td>
+                <td class="discog-col3">Logistic</td>
+                <td class="discog-col4">2003</td>
+            </tr>
+         </table>
+    </div>
+
+
+        <div id="tabs-3">
+          <div class="discog-images">
+           <span class="image1"><img src="http://content.scenemachine.net/img/discog/rare.jpg" alt="album art 1"/></span>
+           <span class="image2"><img src="http://content.scenemachine.net/img/discog/blurp.jpg" alt="album art 2"/></span>
+          </div>
+         <table>
+
+
+
+                <tr>
+
+                 <td class="discog-col1"></td>
+                 <td class="discog-col2">Rare and Unreleased (lp) </td>
+                 <td class="discog-col3">Accelerate</td>
+                 <td class="discog-col4">2000</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1"></td>
+
+                 <td class="discog-col2">Blip, Blurp, Bleep: The Music Of Daniel Bell (cd) </td>
+                 <td class="discog-col3">Logistic</td>
+                 <td class="discog-col4">2003</td>
+                </tr>
+
+
+         </table>
+       </div>
+
+
+        <div id="tabs-4">
+
+          <div class="discog-images">
+           <span class="image1"><img src="http://content.scenemachine.net/img/discog/tresor-142.jpg" alt="album art 1"/></span>
+           <span class="image2"><img src="http://content.scenemachine.net/img/discog/logisticmix.jpg" alt="album art 2"/></span>
+          </div>
+         <table>
+
+
+
+                <tr>
+                 <td class="discog-col1"></td>
+                 <td class="discog-col2">The Button Down Mind of Daniel Bell</td>
+
+                 <td class="discog-col3">Tresor</td>
+                 <td class="discog-col4">2000</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1"></td>
+                 <td class="discog-col2">The Button Down Mind Strikes Back</td>
+                 <td class="discog-col3">Logistic</td>
+
+                 <td class="discog-col4">2003</td>
+                </tr>
+
+
+         </table>
+       </div>
+
+
+        <div id="tabs-5">
+          <div class="discog-images">
+           <span class="image1"><img src="http://content.scenemachine.net/img/discog/postoffice_300.jpg" alt="album art 1"/></span>
+           <span class="image2"><img src="http://content.scenemachine.net/img/discog/scape-cover.jpg" alt="album art 2"/></span>
+
+          </div>
+         <table>
+
+
+
+                <tr>
+                 <td class="discog-col1">Sirius is a Freund </td>
+                 <td class="discog-col2">Acid Phreak</td>
+                 <td class="discog-col3">Tresor</td>
+                 <td class="discog-col4">1995</td>
+
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Tresor 3</td>
+                 <td class="discog-col2">Science Fiction</td>
+                 <td class="discog-col3">Tresor</td>
+                 <td class="discog-col4">1995</td>
+                </tr>
+
+
+                <tr>
+                 <td class="discog-col1">New Horizons</td>
+                 <td class="discog-col2">Beyond + Back</td>
+                 <td class="discog-col3">7th City</td>
+                 <td class="discog-col4">1999</td>
+                </tr>
+
+                <tr>
+
+                 <td class="discog-col1">Tresor 7</td>
+                 <td class="discog-col2">Butterfly Effect</td>
+                 <td class="discog-col3">Tresor</td>
+                 <td class="discog-col4">1999</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Tresor 9</td>
+
+                 <td class="discog-col2">Bilbao</td>
+                 <td class="discog-col3">Tresor</td>
+                 <td class="discog-col4">2001</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Post Office (cd)</td>
+                 <td class="discog-col2">Rhodes 1</td>
+
+                 <td class="discog-col3">Telegraph</td>
+                 <td class="discog-col4">2002</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Post Office (cd)</td>
+                 <td class="discog-col2">Rhodes 2</td>
+                 <td class="discog-col3">Telegraph</td>
+
+                 <td class="discog-col4">2002</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Staeditzism 3 </td>
+                 <td class="discog-col2">Esplanade</td>
+                 <td class="discog-col3">Scape</td>
+                 <td class="discog-col4">2002</td>
+
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Staeditzism 4</td>
+                 <td class="discog-col2">Star Child</td>
+                 <td class="discog-col3">Scape</td>
+                 <td class="discog-col4">2003</td>
+                </tr>
+
+
+
+         </table>
+       </div>
+
+
+        <div id="tabs-6">
+          <div class="discog-images">
+           <span class="image1"><img src="http://content.scenemachine.net/img/discog/cybersonik.gif" alt="album art 1"/></span>
+           <span class="image2"><img src="http://content.scenemachine.net/img/discog/JT1.gif" alt="album art 2"/></span>
+          </div>
+         <table>
+
+
+
+                <tr>
+
+                 <td class="discog-col1">w/ Richie Hawtin (as Cybersonik)</td>
+                 <td class="discog-col2">Technarcy, etc... </td>
+                 <td class="discog-col3">+8</td>
+                 <td class="discog-col4">1990</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">w/ Todd Sines</td>
+
+                 <td class="discog-col2">Multiplexor</td>
+                 <td class="discog-col3">7th City</td>
+                 <td class="discog-col4">1995</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">w/ John Tejada </td>
+                 <td class="discog-col2">Mindbend</td>
+
+                 <td class="discog-col3">Palette</td>
+                 <td class="discog-col4">2004</td>
+                </tr>
+
+
+         </table>
+       </div>
+
+
+        <div id="tabs-7">
+          <div class="discog-images">
+           <span class="image1"><img src="http://content.scenemachine.net/img/discog/ratio.gif" alt="album art 1"/></span>
+
+           <span class="image2"><img src="http://content.scenemachine.net/img/discog/akufen.gif" alt="album art 2"/></span>
+          </div>
+         <table>
+
+
+
+                <tr>
+                 <td class="discog-col1">Ratio</td>
+                 <td class="discog-col2">Motorcity Revisited</td>
+                 <td class="discog-col3">Central</td>
+
+                 <td class="discog-col4">2001</td>
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">John Tejada</td>
+                 <td class="discog-col2">Music for Doubles </td>
+                 <td class="discog-col3">Palette</td>
+                 <td class="discog-col4">2002</td>
+
+                </tr>
+
+                <tr>
+                 <td class="discog-col1">Pantytec</td>
+                 <td class="discog-col2">Micromissions</td>
+                 <td class="discog-col3">Perlon</td>
+                 <td class="discog-col4">2003</td>
+                </tr>
+
+
+                <tr>
+                 <td class="discog-col1">Akufen</td>
+                 <td class="discog-col2">My Way</td>
+                 <td class="discog-col3">Force Inc</td>
+                 <td class="discog-col4">2003</td>
+                </tr>
+
+
+         </table>
+
+       </div>
+
+</div>
+<br />
+<a href="http://content.scenemachine.net/pdfs/discography.pdf">download PDF discography [736k]</a>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ </div></div>
+        <div id="nav">
+            <ul>
+                <li id="nav-news"><a href="../index.html"><span class="none">news</span></a></li>
+                <li id="nav-events"><a href="../events/index.html"><span class="none">events</span></a></li>
+                <li id="nav-discog-active"><a href="index.html"><span class="none">discography</span></a></li>
+                <li id="nav-media"><a href="../media/index.html" title="media"><span class="none">media</span></a></li>
+                <li id="nav-contact"><a href="../contact/index.html"><span class="none">contact</span></a></li>
+            </ul>
+        </div>
+    </div>
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-19320006-6', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
